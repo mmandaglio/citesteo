@@ -3,6 +3,6 @@
 set -e
 
 echo "Pulling mmandaglio/citest..."
-docker pull mmandaglio/citest > /dev/null
+docker pull mmandaglio/citesteo > /dev/null
 echo "done!"
 docker-compose build web

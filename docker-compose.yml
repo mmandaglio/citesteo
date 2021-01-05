@@ -1,10 +1,10 @@
 version: "3.2"
 services:
   web:
-    image: mmandaglio/citest
+    image: mmandaglio/citesteo
     build:
       cache_from:
-        - mmandaglio/citest
+        - mmandaglio/citesteo
       context: .
     depends_on:
       - redis
