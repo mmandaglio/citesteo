@@ -1,0 +1,23 @@
+version: "3.2"
+services:
+  web:
+    image: mmandaglio/citest
+    build:
+      cache_from:
+        - mmandaglio/citest
+      context: .
+    depends_on:
+      - redis
+    ports:
+      - 5000:5000
+  redis:
+    image: redis
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    volumes: 
+      - .:/ci
+    depends_on:
+      - web
+    command: sh /ci/test.sh
